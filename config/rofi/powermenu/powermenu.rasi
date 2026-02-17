@@ -1,0 +1,69 @@
+/**
+ * Modified : Rounded + transparent + emoji icons
+ **/ 
+ * {
+    font: "JetBrains Mono 12";
+ }
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    width:              560px;
+    border-radius:      36px;
+    padding:            14px;
+    background-color:   rgba(20, 20, 30, 0.55);
+    cursor:             "default";
+}
+
+mainbox {
+    enabled:            true;
+    spacing:            8px;
+    padding:            8px;
+    border-radius:      26px;
+    background-color:   rgba(25, 25, 35, 0.7);
+    children:           [ "listview" ];
+}
+
+listview {
+    enabled:            true;
+    columns:            2;
+    lines:              2;
+    fixed-height:       true;
+    fixed-columns:      true;
+    cycle:              true;
+    dynamic:            false;
+    scrollbar:          false;
+    spacing:            4px;
+    background-color:   transparent;
+    text-color:         #ffffff;
+}
+
+element {
+    element-font: "JetBrains Mono 68";
+    enabled:            true;
+    padding:            38px 38px;
+    margin:             0px;
+    border-radius:      26px;
+    background-color:   rgba(40, 40, 50, 0.5);
+    text-color:         #ffffff;
+    cursor:             pointer;
+}
+
+element-text {
+    font: "JetBrains Mono";
+    background-color:   transparent;
+    text-color:         #2ac3de;
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+    width:              100%;
+}
+
+element selected.normal {
+    background-color:   #24283b;
+    text-color:         #24283b;
+}

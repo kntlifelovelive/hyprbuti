@@ -1,8 +1,0 @@
-
-# Ignore stow-created symlinks
-# Cache
-.cache/
-.cache/**
-*/.cache/
-
-

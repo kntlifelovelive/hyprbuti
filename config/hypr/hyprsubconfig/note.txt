@@ -1,0 +1,6 @@
+
+# exec-once = hyprctl plugin load "$HYPR_PLUGIN_DIR/lib/libhyprexpo.so"n-agent-1
+# exec-once = sleep 2 && hyprpm enable hyprscrolling
+# exec-once = sleep 2 && hyprpm enable hyprexpo 
+# ================= Waybar Hide ====================
+# exec-once = ~/.config/hypr/scripts/waybar/waybar-hide.sh
