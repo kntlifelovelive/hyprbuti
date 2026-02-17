@@ -1,0 +1,104 @@
+/* style_nordFloatStyle */
+
+@define-color bg #2e3440;
+@define-color fg #d8dee9;
+@define-color blk #3b4252;
+@define-color red #bf616a;
+@define-color grn #a3be8c;
+@define-color ylw #ebcb8b;
+@define-color blu #81a1c1;
+@define-color mag #b48ead;
+@define-color cyn #88c0d0;
+@define-color brblk #4c566a;
+@define-color wht #eceff4;
+
+window#waybar {
+  background: rgba(46, 52, 64, 0.14);
+  color: @fg;
+}
+
+#clock,
+#network,
+#battery,
+#custom-brightness,
+#pulseaudio,
+#custom-snip,
+#tray,
+#custom-netspeed,
+#idle_inhibitor,
+#custom-power,
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-launcher {
+  background: alpha(@blk, 0.93);
+  padding: 0 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+#custom-brightness:hover,
+#network:hover,
+#clock:hover,
+#netspeed:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-snip:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover {
+  background: @mag;
+  color: #2e3440;
+}
+
+#custom-power:hover {
+  color: @red;
+}
+
+#custom-power {
+  color: @grn;
+}
+
+#pulseaudio.muted {
+  background: @ylw;
+  color: #2e3440;
+}
+
+#netspeed {
+  background: transparent;
+}
+
+#battery.charging {
+  color: @grn;
+}
+
+#battery.warning {
+  color: @red;
+}
+
+#workspaces button {
+  padding: 0px 12px;
+  margin: 2px;
+  border-radius: 5px;
+  color: @grn;
+  background: alpha(@blk, 0.93);
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @grn;
+}
+
+#workspaces button.empty {
+  color: @wht;
+}
+
+#workspaces button.empty.active {
+  color: @wht;
+}

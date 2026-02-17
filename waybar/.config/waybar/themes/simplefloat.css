@@ -1,0 +1,125 @@
+/* style_cyberpunkfloatStyle */
+
+@define-color bg #0f0f1f;
+@define-color fg #ff79c6;
+@define-color blk #1f1f2e;
+@define-color red #ff5555;
+@define-color grn #50fa7b;
+@define-color ylw #f1fa8c;
+@define-color blu #8be9fd;
+@define-color mag #ff79c6;
+@define-color cyn #8be9fd;
+@define-color brblk #2c2c3e;
+@define-color wht #f8f8f2;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Font Awesome 5 Free", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: rgba(15, 15, 31, 0.12);
+  color: @fg;
+}
+
+/* Modules */
+#clock,
+#network,
+#battery,
+#custom-brightness,
+#custom-volume,
+#pulseaudio,
+#custom-snip,
+#tray,
+#custom-netspeed,
+#idle_inhibitor,
+#custom-power,
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-launcher {
+  background: alpha(@blk, 0.95);
+  min-width: 14px;
+  padding: 0 16px;
+  margin: 2px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#custom-power {
+  color: lightgreen;
+}
+
+/* Hover */
+#custom-brightness:hover,
+#custom-volume:hover,
+#network:hover,
+#clock:hover,
+#netspeed:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-snip:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover {
+  background: @mag;
+  color: #3c3836;
+}
+
+#custom-power:hover {
+  color: red;
+}
+
+/* Muted/Charging */
+#pulseaudio.muted {
+  background: #fabd2f;
+  color: #3c3836;
+}
+
+#netspeed {
+  background: transparent;
+}
+
+#battery.charging {
+  color: lawngreen;
+}
+
+#battery.warning {
+  color: #ff5555;
+}
+
+#custom-brightness {
+  padding: 0 8px;
+  font-size: 15px;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0px 12px;
+  margin: 2px;
+  border-radius: 5px;
+  color: @grn;
+  background: alpha(@blk, 0.95);
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @grn;
+}
+
+#workspaces button.empty {
+  color: @wht;
+}
+
+#workspaces button.empty.active {
+  color: @wht;
+}

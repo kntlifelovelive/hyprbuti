@@ -1,0 +1,114 @@
+/* style_solarizedDarkfloatStyle */
+
+@define-color bg #002b36;
+@define-color fg #839496;
+@define-color blk #073642;
+@define-color red #dc322f;
+@define-color grn #859900;
+@define-color ylw #b58900;
+@define-color blu #268bd2;
+@define-color mag #d33682;
+@define-color cyn #2aa198;
+@define-color brblk #586e75;
+@define-color wht #fdf6e3;
+
+window#waybar {
+  background: rgba(0, 43, 54, 0.14);
+  color: @fg;
+}
+
+#clock,
+#network,
+#battery,
+#custom-brightness,
+#pulseaudio,
+#custom-snip,
+#tray,
+#custom-netspeed,
+#idle_inhibitor,
+#custom-power,
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-launcher {
+  background: alpha(@blk, 0.9);
+  min-width: 14px;
+  padding: 0 12px;
+  margin: 1px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover */
+#custom-brightness:hover,
+#network:hover,
+#clock:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-snip:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover {
+  background: @mag;
+  color: #002b36;
+}
+
+#custom-power:hover {
+  color: @red;
+}
+
+#custom-power {
+  color: @grn;
+}
+
+#pulseaudio.muted {
+  background: @ylw;
+  color: #002b36;
+}
+
+#custom-netspeed {
+  background: alpha(@blk, 0.99);
+  min-width: 14px;
+  padding: 0 12px;
+  margin: 1px;
+  border-radius: 14px 4px 4px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#battery.charging {
+  color: @grn;
+}
+
+#battery.warning {
+  color: @red;
+}
+
+#workspaces button {
+  padding: 0px 12px;
+  margin: 1px;
+  border-radius: 4px;
+  color: @grn;
+  background: alpha(@blk, 0.9);
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @grn;
+}
+
+#workspaces button.empty {
+  color: @wht;
+}
+
+#workspaces button.empty.active {
+  color: @wht;
+}

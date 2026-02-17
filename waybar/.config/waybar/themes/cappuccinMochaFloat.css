@@ -1,0 +1,140 @@
+/* --NOTE: style_cappuccinoMochaFloatStyle */
+
+@define-color bg #3B2F2F;
+/* dark mocha brown */
+@define-color fg #EED6C4;
+/* creamy text */
+@define-color blk #4A3A3A;
+/* module background */
+@define-color red #F28F8F;
+/* alerts / power */
+@define-color grn #A3D9A5;
+/* battery / active workspace */
+@define-color ylw #F2E394;
+/* warning / pulseaudio */
+@define-color blu #7DA7D9;
+/* network / highlights */
+@define-color mag #DDA0DD;
+/* hover effect */
+@define-color cyn #A0D6D6;
+/* secondary highlights */
+@define-color brblk #5C4B4B;
+/* borders / subtle background */
+@define-color wht #FFFFFF;
+/* white text / empty workspace */
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Font Awesome 5 Free", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: rgba(59, 47, 47, 0.14);
+  color: @fg;
+}
+
+/* Modules */
+#clock,
+#network,
+#battery,
+#custom-brightness,
+#pulseaudio,
+#custom-snip,
+#tray,
+#idle_inhibitor,
+#custom-power,
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-launcher {
+  background: alpha(@blk, 0.94);
+  min-width: 14px;
+  padding: 0 16px;
+  margin: 2px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#custom-power {
+  color: @grn;
+}
+
+/* Hover Effects */
+#custom-brightness:hover,
+#network:hover,
+#clock:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-snip:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover {
+  background: @mag;
+  color: #3b2f2f;
+}
+
+#custom-power:hover {
+  color: @red;
+}
+
+/* Muted / Charging */
+#pulseaudio.muted {
+  background: @ylw;
+  color: #3b2f2f;
+}
+
+#custom-netspeed {
+  background: alpha(@brblk, 0.99);
+  min-width: 14px;
+  padding: 0 16px;
+  margin: 1px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#battery.charging {
+  color: @grn;
+}
+
+#battery.warning {
+  color: @red;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0px 12px;
+  margin: 2px;
+  border-radius: 18px;
+  color: @grn;
+  background: alpha(@blk, 0.94);
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @grn;
+}
+
+#workspaces button:hover {
+  border-bottom: 1px solid @mag;
+}
+
+#workspaces button.empty {
+  color: @wht;
+}
+
+#workspaces button.empty.active {
+  color: @wht;
+}

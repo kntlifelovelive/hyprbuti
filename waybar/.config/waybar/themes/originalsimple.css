@@ -1,0 +1,135 @@
+/*OriginalSimplestyle*/
+
+@define-color bg #1a1b26;
+@define-color fg #a9b1d6;
+@define-color blk #32344a;
+@define-color red #f7768e;
+@define-color grn #9ece6a;
+@define-color ylw #e0af68;
+@define-color blu #7aa2f7;
+@define-color mag #ad8ee6;
+@define-color cyn #0db9d7;
+@define-color brblk #444b6a;
+@define-color wht #ffffff;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Font Awesome 5 Free", Roboto, Helvetica, Arial, sans-serif;
+
+  min-height: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: rgba(26, 27, 38, 0.11);
+  color: @fg;
+}
+
+tooltip {
+  border-radius: 12px;
+  background-color: #504945;
+  border: 1px solid #d65d0e;
+}
+
+/* Modules: Base Style */
+#clock,
+#network,
+#battery,
+#custom-brightness,
+#pulseaudio,
+#custom-snip,
+#tray,
+#custom-netspeed,
+#idle_inhibitor,
+#custom-power,
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-launcher {
+  background: alpha(@blk, 0.95);
+
+  min-width: 14px;
+  padding: 0 16px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#custom-power {
+  color: lightgreen;
+}
+
+/* Modules: Hover Effects */
+#custom-brightness:hover,
+#network:hover,
+#clock:hover,
+#netspeed:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-snip:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover {
+  background: @mag;
+  color: #3c3836;
+}
+
+#custom-power:hover {
+  color: red;
+}
+
+#pulseaudio.muted {
+  background: #fabd2f;
+  color: #3c3836;
+}
+
+#netspeed {
+  background: transparent;
+}
+
+#keyboard-state label.locked {
+  background: #d65d0e;
+  color: #3c3836;
+  padding: 0px 12px;
+  margin: 4px 0px;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: lawngreen;
+}
+
+#battery.warning {
+  color: #d65d0e;
+}
+
+/* ---------- Workspaces ---------- */
+#workspaces button {
+  padding: 0px 12px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 5px;
+  color: @grn;
+  background: transparent;
+  background: alpha(@blk, 0.95);
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @grn;
+}
+
+#workspaces button.empty {
+  color: @wht;
+}
+
+#workspaces button.empty.active {
+  color: @wht;
+}
