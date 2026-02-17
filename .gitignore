@@ -1,0 +1,15 @@
+
+# Ignore stow-created symlinks
+waybar/.config/waybar
+cava/.config/cava
+hypr/.config/hypr
+kitty/.config/kitty
+rofi/.config/rofi
+tmux/.config/tmux
+wofi/.config/wofi
+# Cache
+.cache/
+.cache/**
+*/.cache/
+
+
