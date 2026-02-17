@@ -1,1 +1,258 @@
-/home/love/.config/waybar/base/config.jsonc
+/////////////////////////////////
+//                             //
+//  Waybar main configuration  //
+//                             //
+/////////////////////////////////
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 2,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  /////////////////////////////////////////////
+  //                                         //
+  //  Modules placement / order on bar      //
+  //                                         //
+  /////////////////////////////////////////////
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "custom/netspeed",
+    "pulseaudio",
+    "group/group-tools",
+    "battery",
+    "group/group-power",
+  ],
+  ///////////////////////////////////
+  //                               //
+  //  Modules configuration       //
+  //                               //
+  ///////////////////////////////////
+  // Idle inhibitor icon
+  // System tray
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+  },
+  // Clock
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}",
+    "format": "{:%I:%M %p}",
+  },
+  // Network speed
+  "custom/netspeed": {
+    "exec": "~/.config/hypr/scripts/waybar/netspeed.sh",
+    "interval": 1,
+    "format": "{}",
+    "markup": "pango",
+    "tooltip": true,
+  },
+  // Workspaces (Hyprland)
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace -5",
+    "on-scroll-down": "hyprctl dispatch workspace +5",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+    },
+  },
+  // Network icon + tooltip
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "kitty --class=Impala -e impala",
+  },
+  // Battery
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "tooltip": true,
+    "format-discharging": "{icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-plugged": "",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ],
+    },
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+    },
+  },
+  // Brightness (custom)
+  "custom/brightness": {
+    "exec": "~/.config/hypr/scripts/waybar/brightness.sh",
+    "interval": 1,
+    "return-type": "json",
+    "tooltip": true,
+    "on-scroll-up": "sh -c 'brightnessctl set +4%'",
+    "on-scroll-down": "sh -c 'brightnessctl set 4%-'",
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "🇺🇸",
+    "format-mm": "🇲🇲",
+    "on-click": "hyprctl switchxkblayout current next",
+  },
+  // Pulseaudio (built-in)
+  "pulseaudio": {
+    "tooltip": false,
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": "{icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ],
+    },
+  },
+  ///////////////////////////////////
+  //                               //
+  //  Custom modules / groups      //
+  //                               //
+  ///////////////////////////////////
+  "group/group-tools": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "other-apps",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/snip",
+      "tray",
+      "custom/brightness",
+      "network"
+    ],
+  },
+  "group/group-apps": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "other-apps",
+      "transition-left-to-right": true,
+    },
+  },
+  "custom/snip": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Screenshot",
+    "on-click": "grim -g \"$(slurp)\" ~/Pictures/$(date +%s).png",
+  },
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/power",
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot"
+    ],
+  },
+  // Power / session buttons
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": true,
+    "tooltip-format": "Logout",
+    "on-click": "bash ~/.config/hypr/scripts/waybar/power.sh --logout",
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": true,
+    "tooltip-format": "Lock",
+    "on-click": "bash ~/.config/hypr/scripts/waybar/lock.sh",
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": true,
+    "tooltip-format": "Reboot",
+    "on-click": "bash ~/.config/hypr/scripts/waybar/power.sh --reboot",
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Shutdown",
+    "on-click": "bash ~/.config/hypr/scripts/waybar/power.sh --shutdown",
+  },
+}
