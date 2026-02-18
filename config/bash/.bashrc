@@ -1,8 +1,5 @@
 # ~/.bashrc
 [[ $- != *i* ]] && return
-# clear && myfetch -i A -f -c 16 -C " █ "
-# clear && fastfetch --logo ~/Pictures/.terminalogo/butilove.png --logo-width 28
-# clear && fastfetch --logo ~/Pictures/.terminalogo/butilove.png --logo-width 28
 alias love='clear && myfetch -i A -f -c 16 -C " █ "'
 alias update='sudo pacman -Syu'
 alias pacorphans='sudo pacman -Rns $(pacman -Qdtq)'
