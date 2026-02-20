@@ -121,8 +121,9 @@ neo_type "1;34" "==== Installing Wallpaper Bank ==="
 sleep 3
 mkdir ~/Pictures
 git clone https://github.com/JaKooLit/Wallpaper-Bank.git # ~/Pictures/wallpaper
-mv Wallpaper-Bank ~/Pictures/walpapper
 
+mv Wallpaper-Bank ~/Pictures/wallpapper
+sleep 1
 neo_type "1;32" "Wallpaper-Bank  successfully!"
 
 # ===============================
