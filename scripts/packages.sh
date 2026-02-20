@@ -1,21 +1,10 @@
 #!/bin/env bash
-set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PKG_LIST="$SCRIPT_DIR/../packages/pkgslist.txt"
 
 echo "== System Update =="
 sudo pacman -Syu --noconfirm
-
-mkdir ~/Pictures
-
-echo "JaKooLit Wallpaper-Bank Installing ...."
-
-git clone https://github.com/JaKooLit/Wallpaper-Bank.git
-
-mv Wallpaper-Bank ~/Pictures/wallpaper
-
-echo "Wallpaper Done Setup ... Successfull !!! "
 
 # -----------------------------
 # Install yay if not installed
