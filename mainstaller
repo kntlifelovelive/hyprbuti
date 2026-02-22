@@ -121,7 +121,7 @@ neo_type "1;34" "==== Installing Wallpaper Bank ==="
 mkdir -p ~/Pictures
 
 if [ ! -d ~/Pictures/wallpaper ]; then
-	git clone https://github.com/JaKooLit/Wallpaper-Bank.git ~/Pictures/wallpaper
+	git clone https://github.com/kntlifelovelive/bubuwallpaper.git ~/Pictures/wallpaper
 	echo "Wallpaper installed successfully!"
 else
 	echo "Wallpaper folder already exists."
