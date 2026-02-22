@@ -113,10 +113,25 @@ else
 	exit 1
 fi
 
+neo_type "1;34" "==== Installing YAY Package Manager  Bulid ... ==="
+sleep 5
+
+if ! command -v yay &>/dev/null; then
+	echo "[2/6] Installing yay..."
+	sudo pacman -S --needed git base-devel
+	git clone https://aur.archlinux.org/yay.git
+	cd yay && makepkg -si
+	cd ..
+fi
+
+neo_type "1;34" "==== YAY Package Manager  Bulid done ... ==="
+sleep 5
+
 # ===============================
 # installing Wallpaper Bank
 # ===============================
 neo_type "1;34" "==== Installing Wallpaper Bank ==="
+sleep 3
 
 mkdir -p ~/Pictures
 
@@ -131,33 +146,37 @@ neo_type "1;32" "Wallpaper-Bank  successfully!"
 # ===============================
 # Installing Packages
 # ===============================
-neo_type "1;34" "== Installing Packages =="
-sleep 2
+neo_type "1;34" "== Installing Packages For Arch hyprland  =="
+sleep 5
 # Script Path Search Variable
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# test Install Script
-bash "$SCRIPT_DIR/scripts/packages.sh" # Not same folder call script
+# # test Install Script
+# bash "$SCRIPT_DIR/scripts/packages.sh" # Not same folder call script
 
 # test Install Script
 bash "$SCRIPT_DIR/scripts/install-pacman.sh"
+
+neo_type "1;34" "== Installing Yay  Packages   =="
+sleep 5
 # test Install Script
 bash "$SCRIPT_DIR/scripts/install-yay.sh"
+
+neo_type "1;34" "== Installing Yay  Packages done !!  =="
+sleep 5
 
 # ===============================
 # Installing Configs
 # ===============================
-neo_type "1;34" "== Hyprland Setup Configurations =="
+neo_type "1;34" "== Hyprland Setup Configurations Start =="
+sleep 5
 # source "$SCRIPT_DIR/archyprsetup.sh" # Same folder call script
 # sleep 2
 bash "$SCRIPT_DIR/scripts/archysetup.sh" # Not same folder call script
 
-# ===============================
-# Complete Message (Neo Style)
-# ===============================
 echo
 neo_type "1;32" "✔ Arch Hyprland Config and Packages Install Complete!"
-sleep 1
+sleep 3
 
 # ===============================
 # Reload Hyprland
@@ -165,7 +184,7 @@ sleep 1
 neo_type "1;36" "Reloading Hyprland..."
 hyprctl reload 2>/dev/null || true
 neo_type "1;32" "Hyprland reloaded successfully!"
-sleep 1
+sleep 3
 
 # ===============================
 # Victory Screen
