@@ -156,8 +156,8 @@
   },
   "hyprland/language": {
     "format": "{}",
-    "format-en": "🇺🇸",
-    "format-mm": "🇲🇲",
+    "format-en": "US",
+    "format-mm": "MM",
     "on-click": "hyprctl switchxkblayout current next",
   },
   // Pulseaudio (built-in)
