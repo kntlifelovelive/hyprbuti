@@ -133,8 +133,16 @@ neo_type "1;32" "Wallpaper-Bank  successfully!"
 # ===============================
 neo_type "1;34" "== Installing Packages =="
 sleep 2
+# Script Path Search Variable
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# test Install Script
 bash "$SCRIPT_DIR/scripts/packages.sh" # Not same folder call script
+
+# test Install Script
+bash "$SCRIPT_DIR/scripts/install-pacman.sh"
+# test Install Script
+bash "$SCRIPT_DIR/scripts/install-yay.sh"
 
 # ===============================
 # Installing Configs
