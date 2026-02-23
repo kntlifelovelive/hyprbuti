@@ -1,5 +1,6 @@
 firefox
 chromium
+brave-bin
 discord
 telegram-desktop
 obsidian
@@ -11,11 +12,8 @@ nerdfonts-installer-bin
 otf-monaspace-nerdfonts
 
 yaru-icon-theme
-yaru-gnome-shell-theme
 yaru-gtksourceview-theme
-yaru-metacity-theme
-yaru-unity-theme
-yaru-xfwm4-theme
+papirus-icon-theme-git
 
 catppuccin-gtk-theme-git
 tokyonight-gtk-theme-git
