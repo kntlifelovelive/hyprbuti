@@ -6,7 +6,7 @@
 
 <div align="center">
   <!-- Local image add -->
-  <img src="photo/archliux.png" alt="Arch Linux" width="300"/>
+<img src="photo/archliux.png" alt="Arch Linux" width="100%"/>
 </div>
 
 <br>
