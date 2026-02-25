@@ -1,7 +1,4 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=7AA2F7&fontWeight=bold&vCenter=true&width=450&height=35&lines=ArcHyprBuBu" width="450"/>
-</div>
-<div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=7AA2F7&background=1E1E2E&fontWeight=bold&vCenter=true&width=450&height=35&lines=ArcHyprBuBu" width="450"/>
 </div>
 <br>
