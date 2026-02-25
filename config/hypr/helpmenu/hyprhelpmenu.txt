@@ -1,11 +1,16 @@
 ========= WINDOW CONTROL =========
 
+
 SUPER + Q              → Close active window
 SUPER + SHIFT + Q      → Force kill window
 SUPER + F              → Toggle floating
 SUPER + CTRL + F       → Fullscreen
 
+
+
 ========= APPLICATIONS =========
+
+
 
 SUPER + T              → Open Terminal
 SUPER + B              → Open Browser (Firefox)
@@ -13,7 +18,11 @@ SUPER + CTRL + T       → Telegram
 SUPER + D              → App Launcher
 SUPER + CTRL + P       → Power Menu
 
+
+
 ========= WORKSPACES =========
+
+
 
 SUPER + 1-0            → Switch workspace
 SUPER + SHIFT + 1-0    → Move window to workspace
@@ -21,22 +30,31 @@ SUPER + Tab            → Next workspace
 SUPER + CTRL + Tab     → Previous workspace
 SUPER + SHIFT + Tab    → New  workspace
 
+
+
 ========= SPECIAL =========
+
 
 SUPER + U              → Toggle special workspace
 SUPER + S              → Toggle scratchpad magic
 
 ========= SYSTEM =========
 
+
 SUPER + W              → Switch Waybar Theme
 SUPER + CTRL + W       → Switch Wallpaper
+SUPER + CTRL + B       → Bluetooth Connect Choice
 SUPER + SPACE          → Switch Keyboard Layout
 SUPER + ALT + F        → Select Foreground Image
 SUPER + SHIFT + L      → Select Lock Background
 
+
 ========= SCREENSHOT =========
+
 
 Print                  → Area Screenshot
 Shift + Print          → Fullscreen Screenshot
 Ctrl + Print           → Area Copy
 Alt + Print            → Active Window Screenshot
+
+
