@@ -12,7 +12,7 @@ echo "Hypr Configurations Setup from $REPO"
 echo
 
 # Skip list (Pro Style)
-SKIP_ITEMS=("mainstaller" "packages" "scripts")
+SKIP_ITEMS=("mainstaller" "packages" "scripts" "photo")
 
 for item in "$REPO"/*; do
 	[ -e "$item" ] || continue

@@ -4,6 +4,14 @@
 
 <br>
 
+<div align="center">
+  <!-- Local image add -->
+  <img src="photo/archliux.png" alt="Arch Linux" width="300"/>
+</div>
+
+<br>
+<br>
+
 <div align="left">
   <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=F5C2E7&fontWeight=bold&vCenter=true&width=435&height=25&lines=Installation" width="450"/>
 </div>
