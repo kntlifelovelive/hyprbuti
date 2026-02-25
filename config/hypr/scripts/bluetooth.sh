@@ -97,8 +97,19 @@ connect_device() {
 	stop_bt
 	exit 1
 }
-
+# ---------- Monitor Disconnect ----------
+monitor_disconnect() {
+	while true; do
+		if bluetoothctl info "$MAC" | grep -q "Connected: yes"; then
+			sleep 5
+		else
+			noti "Disconnected: $NAME"
+			break
+		fi
+	done
+}
 # ---------- MAIN ----------
 start_bt
 scan_devices
 connect_device
+monitor_disconnect
