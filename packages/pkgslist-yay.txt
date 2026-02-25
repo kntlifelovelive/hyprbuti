@@ -1,6 +1,5 @@
 firefox
 chromium
-brave-bin
 discord
 telegram-desktop
 obsidian
