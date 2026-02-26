@@ -121,7 +121,7 @@ if ! command -v yay &>/dev/null; then
 	sudo pacman -S --needed git base-devel
 	git clone https://aur.archlinux.org/yay.git
 	cd yay && makepkg -si
-	cd ..
+	cd .. && rm -rf yay
 fi
 
 neo_type "1;34" "==== YAY Package Manager  Bulid done ... ==="
