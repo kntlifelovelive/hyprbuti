@@ -3,8 +3,9 @@
 BT_SERVICE="bluetooth"
 
 # ---------- YAD Notify ----------
+
 noti() {
-	yad --notification --text="$1" --timeout=3 2>/dev/null
+	zenity --info --title="Bluetooth" --text="$1" --timeout=4 --width=220 --height=65
 }
 
 # ---------- Start Bluetooth ----------
@@ -12,12 +13,6 @@ start_bt() {
 	systemctl enable $BT_SERVICE >/dev/null 2>&1
 	systemctl start $BT_SERVICE >/dev/null 2>&1
 	bluetoothctl power on >/dev/null 2>&1
-}
-# ---------- Stop Bluetooth ----------
-stop_bt() {
-	bluetoothctl power off >/dev/null 2>&1
-	sudo systemctl stop $BT_SERVICE >/dev/null 2>&1
-	noti "Bluetooth stopped"
 }
 
 # ---------- Scan Devices ----------
@@ -94,22 +89,9 @@ connect_device() {
 	done
 
 	noti "Connection failed. Make sure device is on & in range."
-	stop_bt
 	exit 1
-}
-# ---------- Monitor Disconnect ----------
-monitor_disconnect() {
-	while true; do
-		if bluetoothctl info "$MAC" | grep -q "Connected: yes"; then
-			sleep 5
-		else
-			noti "Disconnected: $NAME"
-			break
-		fi
-	done
 }
 # ---------- MAIN ----------
 start_bt
 scan_devices
 connect_device
-monitor_disconnect
