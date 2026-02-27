@@ -1,4 +1,5 @@
 #.zshrc Customize Configuration 
+DISABLE_AUTO_UPDATE="true"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
@@ -36,14 +37,18 @@ alias yclean='yay -Yc'   # clean unneeded packages
 alias ysearch='yay -Ss'  # search
 
 
-DISABLE_AUTO_UPDATE="true"
-HISTSIZE=150000         # in-memory history size
-SAVEHIST=150000         # saved history size
+HISTSIZE=150000
+SAVEHIST=150000
+HISTFILE=~/.zsh_history
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
-setopt INC_APPEND_HISTORY
-HISTFILE=~/.zsh_history
 
 # ZSH Customize Prompt  Function 
 function set_bubu_prompt() {
@@ -130,5 +135,4 @@ function clear {
 }
 
 # function invoke  call 
-# title_banner
 [[ -o interactive ]] && title_banner
