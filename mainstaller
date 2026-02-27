@@ -151,6 +151,13 @@ sleep 5
 # Script Path Search Variable
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+neo_type "1;93" "Install Zsh + OhMyZsh Environment? (y/n): "
+read -r zsh_confirm
+
+if [[ "$zsh_confirm" =~ ^[Yy]$ ]]; then
+	bash "$SCRIPT_DIR/scripts/install-zsh.sh"
+fi
+
 # sudo pacman Install Script
 bash "$SCRIPT_DIR/scripts/install-pacman.sh"
 

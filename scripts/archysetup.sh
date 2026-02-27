@@ -27,15 +27,15 @@ for item in "$REPO"/*; do
 	done
 
 	# Special case for bash folder
-	if [[ "$name" == "bash" ]]; then
-		if [ -f "$item/.bashrc" ]; then
-			if [ -f "$HOME/.bashrc" ]; then
-				echo "Backing up .bashrc → .bashrc_backup_$DATE"
-				mv "$HOME/.bashrc" "$HOME/.bashrc_backup_$DATE"
+	if [[ "$name" == "zsh" ]]; then
+		if [ -f "$item/.zshrc" ]; then
+			if [ -f "$HOME/.zshrc" ]; then
+				echo "Backing up .zshrc → .zshrc_backup_$DATE"
+				mv "$HOME/.zshrc" "$HOME/.zshrc_backup_$DATE"
 			fi
 
-			echo "Copying .bashrc to HOME"
-			cp "$item/.bashrc" "$HOME/"
+			echo "Copying .zshrc to HOME"
+			cp "$item/.zshrc" "$HOME/"
 		fi
 		continue
 	fi
@@ -51,4 +51,4 @@ for item in "$REPO"/*; do
 done
 
 echo
-echo "Done ✅"
+echo "Done "

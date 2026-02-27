@@ -7,7 +7,6 @@ bitwarden
 zoom
 balena-etcher
 
-nerdfonts-installer-bin
 otf-monaspace-nerdfonts
 
 yaru-icon-theme
@@ -17,4 +16,4 @@ papirus-icon-theme-git
 catppuccin-gtk-theme-git
 tokyonight-gtk-theme-git
 
-outline-client-appimage-git
+outline-client-appimage
