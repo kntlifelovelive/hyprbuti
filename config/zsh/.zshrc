@@ -7,6 +7,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ==== Configuration Commands === 
 alias update='sudo pacman -Syu'
+alias love='clear && myfetch -i A -f -c 16 -C " █ "'
 alias grep='grep --color=auto'
 alias bye='sudo shutdown -h now'
 alias loop='sudo reboot'
@@ -36,6 +37,9 @@ alias yremove='yay -Rns' # remove with configs
 alias yclean='yay -Yc'   # clean unneeded packages
 alias ysearch='yay -Ss'  # search
 
+export TERM=kitty
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 HISTSIZE=150000
 SAVEHIST=150000
