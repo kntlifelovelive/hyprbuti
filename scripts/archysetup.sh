@@ -26,7 +26,7 @@ for item in "$REPO"/*; do
 		fi
 	done
 
-	# Special case for bash folder
+	# Special case for zsh folder
 	if [[ "$name" == "zsh" ]]; then
 		if [ -f "$item/.zshrc" ]; then
 			if [ -f "$HOME/.zshrc" ]; then
