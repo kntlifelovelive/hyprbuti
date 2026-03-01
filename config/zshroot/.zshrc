@@ -130,7 +130,6 @@ echo -e "\033[1;35m
 
 # Define the banner function
 print_banner() {
-	printf "\e[0m\e[1;36m🌺 Trust your heart if the sea catch fire,\e[0m\e[5m\e[1;36mlive\e[0m\e[1;36m by love though the stars walk backwack. 🌸🌾 \e[25m\e[0m\n"
 	printf "\e[0m\e[1;36m🌺 Trust your heart if the sea catch fire,\e[0m\e[5m\e[1;31mlive\e[0m\e[1;36m by \e[0m\e[5m\e[1;32mlove\e[0m\e[1;36m though the stars walk backwack. 🌸🌾 \e[25m\e[0m\n"
 	# printf "\033[0;100m\e[1;92m 󱢴  %s - %s - %s - 󰥔 %s 󱢴 \n" "$(date +'%b')" "$(date +'%d')" "$(date +'%Y')"  "$(date +'%I:%M -%p')"
 }
