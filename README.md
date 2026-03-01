@@ -4,7 +4,7 @@
 <br>
 
 <div align="center">
-  <img src="photo/archlinux_large.png" alt="Arch Linux" width="380" height="350"/>
+  <img src="photo/butilove.png" alt="Arch Linux" width="380" height="350"/>
 </div>
 
 <br>
