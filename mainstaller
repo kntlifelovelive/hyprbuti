@@ -180,15 +180,7 @@ sleep 5
 # ===============================
 # Installing Configs
 # ===============================
-neo_type "1;34" "== Hyprland Setup Configurations Start =="
-sleep 5
-bash "$SCRIPT_DIR/scripts/archysetup.sh"
 
-echo
-neo_type "1;32" "✔ Arch Hyprland Config and Packages Install Complete!"
-sleep 3
-
-# ===================== test ===================
 neo_type "1;34" "== Hyprland Setup Configurations Start =="
 sleep 5
 bash "$SCRIPT_DIR/scripts/archysetuproot.sh"
