@@ -1,0 +1,17 @@
+#!/bin/bash
+
+THEME_DIR="$HOME/.config/kitty/themes"
+KITTY_CONF="$HOME/.config/kitty/kitty.conf"
+
+themes=$(find "$THEME_DIR" -maxdepth 1 -type f -iname "*.conf" -printf "%f\n" | sort)
+
+chosen=$(echo "$themes" | rofi -dmenu -i \
+	-theme "$HOME/.config/rofi/kitty-themes/kitty-theme-switch.rasi" \
+	-p "Kitty Theme")
+
+[ -z "$chosen" ] && exit 0
+
+# Replace include line
+sed -i "s|^include .*themes/.*|include ./themes/$chosen|" "$KITTY_CONF"
+
+notify-send "Kitty Theme Switched" "$chosen"

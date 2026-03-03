@@ -1,0 +1,23 @@
+window {
+    width: 700px;
+    padding: 20px;
+    background-color: #1a1b26;
+    border: 2px;
+    border-color: #7aa2f7;
+}
+listview {
+    lines: 12;
+    spacing: 4px;
+    background-color: #1a1b26;
+}
+element {
+    padding: 6px;
+    text-color: #c0caf5;
+}
+element selected {
+    background-color: #33467c;
+}
+prompt {
+    text-color: #7dcfff;
+    font: "JetBrainsMono Bold 15";
+}

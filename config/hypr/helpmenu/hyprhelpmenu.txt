@@ -1,6 +1,7 @@
 ========= WINDOW CONTROL =========
 
 
+SUPER + ALT + H        → Close active window
 SUPER + Q              → Close active window
 SUPER + SHIFT + Q      → Force kill window
 SUPER + F              → Toggle floating
@@ -47,6 +48,7 @@ SUPER + CTRL + B       → Bluetooth Connect Choice
 SUPER + SPACE          → Switch Keyboard Layout
 SUPER + ALT + F        → Select Foreground Image
 SUPER + SHIFT + L      → Select Lock Background
+SUPER + ALT + K        → Kitty-themes Switch 
 
 
 ========= SCREENSHOT =========
