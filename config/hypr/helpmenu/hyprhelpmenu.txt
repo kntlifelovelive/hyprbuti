@@ -43,6 +43,7 @@ SUPER + S              → Toggle scratchpad magic
 
 
 SUPER + W              → Switch Waybar Theme
+SUPER + ALT  + B       → HyprBorder Switch Theme
 SUPER + CTRL + W       → Switch Wallpaper
 SUPER + CTRL + B       → Bluetooth Connect Choice
 SUPER + SPACE          → Switch Keyboard Layout
