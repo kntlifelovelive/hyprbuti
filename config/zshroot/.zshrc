@@ -19,8 +19,8 @@ alias hr="hyprctl reload"
 
 # Myconfig alias ===
 # ==================
-alias ls='ls --color=auto'
-alias tree='tree -C'
+alias el='eza -lh --icons --git --group-directories-first'
+alias ela='eza -alh --icons --git --group-directories-first'
 
 # Pacman install package
 alias pacupf='sudo pacman -Syyu'  # force update system
@@ -37,6 +37,8 @@ alias yinstall='yay -S'  # install package from AUR/repo
 alias yremove='yay -Rns' # remove with configs
 alias yclean='yay -Yc'   # clean unneeded packages
 alias ysearch='yay -Ss'  # search
+
+eval "$(zoxide init zsh)" # super file maanger for packager metadatas 
 
 export TERM=kitty
 export LANG=en_US.UTF-8

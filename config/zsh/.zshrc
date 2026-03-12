@@ -18,8 +18,9 @@ alias hr="hyprctl reload"
 
 # Myconfig alias ===
 # ==================
-alias ls='ls --color=auto'
-alias tree='tree -C'
+
+alias el='eza -lh --icons --git --group-directories-first'
+alias ela='eza -alh --icons --git --group-directories-first'
 
 # Pacman install package
 alias pacupf='sudo pacman -Syyu'  # force update system
@@ -37,9 +38,15 @@ alias yremove='yay -Rns' # remove with configs
 alias yclean='yay -Yc'   # clean unneeded packages
 alias ysearch='yay -Ss'  # search
 
+# node global Path import 
+export PATH=~/.npm-global/bin:$PATH
+
 export TERM=kitty
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+eval "$(zoxide init zsh)" # super file maanger for packager metadatas 
+
 
 HISTSIZE=150000
 SAVEHIST=150000
@@ -95,6 +102,8 @@ function set_bubu_prompt() {
   # Build prompt: actual newline here
   PROMPT="%F{magenta}╭(${venv_name}${user_color}%n%f%F{magenta})-[%F{cyan}%~%f%F{magenta}]${git_branch}
 %F{magenta}╰─${prompt_symbol} %f"
+#    PROMPT="%F{magenta}╭(${venv_name}%K{#9A348E}${user_color} %n %f%k%F{magenta})-[%F{cyan}%~%f%F{magenta}]${git_branch}
+# %F{magenta}╰─${prompt_symbol} %f"
 }
 
 autoload -Uz add-zsh-hook
@@ -110,10 +119,11 @@ echo -e "\033[1;35m
  ▀█▀█▀  ██▄▄▄ ██▄▄▄ ▀████ ▀███▀ ██   ██     ██  ▀███▀   ████▀  ██ ██ ██▄▄▄ ██▀██ ██   ██
 \033[0m"
 	local text=" 🌺 Trust your heart if the sea catch fire,live by love though the stars walk backwack. 🌸🌾 "
-
 	local padding=35 # slide distance
 	local speed=0.04
-
+	
+    chafa --colors full --symbols braille --size 20x20 \
+    "$HOME/.config/bubuicon/butilove.png"
 	tput civis # hide cursor
 
 	# Slide from right
@@ -132,11 +142,13 @@ print_banner() {
 	# printf "\033[0;100m\e[1;92m 󱢴  %s - %s - %s - 󰥔 %s 󱢴 \n" "$(date +'%b')" "$(date +'%d')" "$(date +'%Y')"  "$(date +'%I:%M -%p')"
 }
 
+
 # Custom clear command to include banner
 function clear {
 	command clear
-	print_banner
+	print_banner	
 }
 
 # function invoke  call 
 [[ -o interactive ]] && title_banner
+

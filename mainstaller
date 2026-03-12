@@ -2,9 +2,9 @@
 
 trap "tput cnorm; exit" INT TERM EXIT
 
-# ===============================
-# Banner Wave Animation
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │           Banner Wave Animation            │
+# └────────────────────────────────────────────┘
 animate_banner() {
 	clear
 	local banner=(
@@ -24,9 +24,9 @@ animate_banner() {
 	echo
 }
 
-# ===============================
-# Neon Typing Function
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │           Neon Typing  Function            │
+# └────────────────────────────────────────────┘
 neo_type() {
 	local color=$1
 	local text="$2"
@@ -45,9 +45,9 @@ neo_type() {
 	fi
 }
 
-# ===============================
-# Flash Confirm Animation
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │           Flash Confirm Animation          │
+# └────────────────────────────────────────────┘
 flash_message() {
 	local color=$1
 	local message="$2"
@@ -62,9 +62,9 @@ flash_message() {
 	echo
 }
 
-# ===============================
-# Victory Banner Animation (New Style)
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │     Victory Banner Animation (New Style)   │
+# └────────────────────────────────────────────┘
 victoryhyr() {
 	clear
 	local art=(
@@ -90,16 +90,16 @@ victoryhyr() {
 	echo
 }
 
-# ===============================
-# Start
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │                 Start Script               │
+# └────────────────────────────────────────────┘
 animate_banner
 neo_type "1;36" "Welcome to ArcHypr Setup Installer"
 echo
 
-# ===============================
-# Start Prompt (Neo Style)
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │          Start Prompt (Neo Style)          │
+# └────────────────────────────────────────────┘
 neo_type "1;93" "Do you want to start the setup? (y/n): "
 read -r confirm
 
@@ -113,7 +113,10 @@ else
 	exit 1
 fi
 
-neo_type "1;34" "==== Installing YAY Package Manager  Bulid ... ==="
+# ┌────────────────────────────────────────────┐
+# │      Start Yay Packages Install Setup      │
+# └────────────────────────────────────────────┘
+neo_type "1;34" "Installing YAY Package Manager  Bulid ..."
 sleep 5
 
 if ! command -v yay &>/dev/null; then
@@ -124,13 +127,13 @@ if ! command -v yay &>/dev/null; then
 	cd .. && rm -rf yay
 fi
 
-neo_type "1;34" "==== YAY Package Manager  Bulid done ... ==="
+neo_type "1;34" "YAY Package Manager  Bulid done ..."
 sleep 5
 
-# ===============================
-# installing Wallpaper Bank
-# ===============================
-neo_type "1;34" "==== Installing Wallpaper Bank ==="
+# ┌────────────────────────────────────────────┐
+# │        installing Wallpaper Bank           │
+# └────────────────────────────────────────────┘
+neo_type "1;34" "Installing Wallpaper Bank ..."
 sleep 3
 
 mkdir -p ~/Pictures
@@ -143,12 +146,15 @@ else
 fi
 neo_type "1;32" "Wallpaper-Bank  successfully!"
 
-# ===============================
-# Installing Packages
-# ===============================
-neo_type "1;34" "== Installing Packages For Arch hyprland  =="
+# ┌────────────────────────────────────────────┐
+# │            Installing Packages             │
+# └────────────────────────────────────────────┘
+neo_type "1;34" "Installing Packages For Arch hyprland"
 sleep 5
-# Script Path Search Variable
+
+# ┌────────────────────────────────────────────┐
+# │       Script Path Search Variable          │
+# └────────────────────────────────────────────┘
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 neo_type "1;93" "Install Zsh + OhMyZsh Environment? (y/n): "
@@ -158,52 +164,60 @@ if [[ "$zsh_confirm" =~ ^[Yy]$ ]]; then
 	bash "$SCRIPT_DIR/scripts/install-zsh.sh"
 fi
 
-# sudo pacman Install Script
-bash "$SCRIPT_DIR/scripts/install-pacman.sh"
+# ┌────────────────────────────────────────────┐
+# │     Package pacman or Yay Install Script   │
+# └────────────────────────────────────────────┘
+bash "$SCRIPT_DIR/scripts/install-2packages.sh"
 
-neo_type "1;34" "==  font cache refresh  =="
+# ┌────────────────────────────────────────────┐
+# │     font cache refresh Command run         │
+# └────────────────────────────────────────────┘
+neo_type "1;34" "font cache refresh"
 sleep 5
 fc-cache -fv
 sleep 3
-neo_type "1;34" "==  font cache refresh done ! =="
+neo_type "1;34" "font cache refresh done !"
 echo
 
-echo
-neo_type "1;34" "== Installed  Yay  Packages   =="
-sleep 5
-# yay Install Script
-bash "$SCRIPT_DIR/scripts/install-yay.sh"
+# echo
+# neo_type "1;34" "== Installed  Yay  Packages   =="
+# sleep 5
 
-neo_type "1;34" "== Installed Yay  Packages done !!  =="
-sleep 5
+# ┌────────────────────────────────────────────┐
+# │            Yay Install Script              │
+# └────────────────────────────────────────────┘
+# bash "$SCRIPT_DIR/scripts/install-yay.sh"
 
-# ===============================
-# Installing Configs
-# ===============================
+# neo_type "1;34" "Installed Yay  Packages done !!"
+# sleep 5
 
-neo_type "1;34" "== Hyprland Setup Configurations Start =="
+# ┌────────────────────────────────────────────┐
+# │           Hypland Setup Configs            │
+# └────────────────────────────────────────────┘
+neo_type "1;34" "Hyprland Setup Configurations Start"
 sleep 5
 bash "$SCRIPT_DIR/scripts/archysetuproot.sh"
 
 echo
 neo_type "1;32" "✔ Arch Hyprland Config and Packages Install Complete!"
 sleep 3
-# ===============================
-# Reload Hyprland
-# ===============================
+
+# ┌────────────────────────────────────────────┐
+# │               Reload Hyprland              │
+# └────────────────────────────────────────────┘
 neo_type "1;36" "Reloading Hyprland..."
 hyprctl reload 2>/dev/null || true
 neo_type "1;32" "Hyprland reloaded successfully!"
 sleep 3
 
-# ===============================
-# Victory Screen
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │               Victory Screen               │
+# └────────────────────────────────────────────┘
 victoryhyr
 
-# ===============================
-# Continue / Reboot Prompt
-# ===============================
+# ┌────────────────────────────────────────────┐
+# │          Continue / Reboot Prompt          │
+# └────────────────────────────────────────────┘
 while true; do
 	neo_type "1;93" "Do you want to continue (c) or reboot (r)? [c/r]: "
 	read -r choice
