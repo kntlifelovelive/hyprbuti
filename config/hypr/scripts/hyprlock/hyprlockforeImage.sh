@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 # --NOTE:  == Error check code for bash shell
 set -x
 
@@ -26,7 +33,7 @@ choice="$(menu | rofi \
 	-show-icons \
 	-i \
 	-dmenu \
-	-theme ~/.config/hypr/hyprlockphotos/hyprlockForeImages.rasi \
+	-theme ~/.config/rofi/hyprlock/hyprlockForeImages.rasi \
 	-p LockScreenImage)"
 
 [ -z "$choice" ] && exit 0

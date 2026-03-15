@@ -1,5 +1,12 @@
 #!/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │ Internet Network Speed Show Script         │
+# └────────────────────────────────────────────┘
+
 # Detect default network interface (ethernet, wifi, vpn)
 INTERFACE=$(ip route | awk '/default/ {print $5; exit}')
 

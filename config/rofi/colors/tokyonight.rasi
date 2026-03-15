@@ -1,14 +1,13 @@
-/**
- *
- * Author : Levi Lacoss (fishyfishfish55)
- * Github : @fishyfishfish55
- *
- * Colors
- **/
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Colors       : TokyoNight                  │
+//  └────────────────────────────────────────────┘
 
 * {
-    background:     #15161EFF;
-    background-alt: #1A1B26FF;
+    background:     rgba(21,22,30,0.45);
+    background-alt: rgba(26,27,38,0.45);
     foreground:     #C0CAF5FF;
     selected:       #33467CFF;
     active:         #414868FF;

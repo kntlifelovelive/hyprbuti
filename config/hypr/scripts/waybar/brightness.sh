@@ -1,5 +1,12 @@
 #!/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 PERCENT=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
 
 BAR_LEN=20

@@ -1,23 +1,33 @@
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Rofi PowerMenu Rasi Launcher  Theme        │
+//  └────────────────────────────────────────────┘
+
+
+
 window {
-    width: 700px;
+    width: 450px;
     padding: 20px;
-    background-color: #1a1b26;
+    background-color: rgba(26,27,38,0.48);
     border: 2px;
     border-color: #7aa2f7;
 }
 listview {
-    lines: 12;
-    spacing: 4px;
+    lines: 16;
+    spacing: 2px;
     background-color: #1a1b26;
 }
 element {
-    padding: 6px;
+    padding: 1px;
     text-color: #c0caf5;
 }
 element selected {
+    text-color: #7dcfff;
     background-color: #33467c;
 }
 prompt {
-    text-color: #7dcfff;
+    text-color: #33467c;
     font: "JetBrainsMono Bold 15";
 }

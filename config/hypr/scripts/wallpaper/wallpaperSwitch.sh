@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-# ========== Rofi Wallpaper Switch BashScript ================
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │ Rofi Wallpaper Switch BashScript           │
+# └────────────────────────────────────────────┘
 
 WALL_DIR="$HOME/Pictures/wallpaper"
 STATE_FILE="$HOME/.cache/current_wallpaper"

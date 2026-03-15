@@ -1,5 +1,12 @@
 #!/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 FILE="$HOME/.config/hypr/helpmenu/hyprhelpmenu.txt"
 
 cat "$FILE" | rofi -dmenu -i -markup-rows -p "Hypr Keybinds" \

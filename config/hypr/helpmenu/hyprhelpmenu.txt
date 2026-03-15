@@ -1,4 +1,4 @@
-========= WINDOW CONTROL =========
+======== WINDOW CONTROL =========
 
 
 SUPER + ALT + H        → Close active window
@@ -50,6 +50,7 @@ SUPER + SPACE          → Switch Keyboard Layout
 SUPER + ALT + F        → Select Foreground Image
 SUPER + SHIFT + L      → Select Lock Background
 SUPER + ALT + K        → Kitty-themes Switch 
+SUPER + ALT + R        → Rofi All Colors Switch 
 
 
 ========= SCREENSHOT =========

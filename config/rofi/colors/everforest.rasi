@@ -1,16 +1,16 @@
-/**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Colors
- **/
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Colors       : Everforest                  │
+//  └────────────────────────────────────────────┘
 
 * {
-    background:     #323D43FF;
-    background-alt: #3C474DFF;
+    background:     rgba(50,61,67,0.45);
+    background-alt: rgba(60,71,77,0.45);
     foreground:     #DAD1BEFF;
     selected:       #7FBBB3FF;
     active:         #A7C080FF;
     urgent:         #E67E80FF;
 }
+

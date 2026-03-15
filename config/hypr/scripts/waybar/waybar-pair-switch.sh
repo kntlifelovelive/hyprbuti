@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 WAYBAR="$HOME/.config/waybar"
 PAIR_DIR="$WAYBAR/waybarthemepair"
 
@@ -11,8 +18,8 @@ PAIR="$PAIR_DIR/$THEME"
 
 # safety check
 if [[ ! -f "$PAIR/config.jsonc" || ! -f "$PAIR/style.css" ]]; then
-  notify-send "Waybar" "Invalid theme pair: $THEME"
-  exit 1
+	notify-send "Waybar" "Invalid theme pair: $THEME"
+	exit 1
 fi
 
 pkill waybar

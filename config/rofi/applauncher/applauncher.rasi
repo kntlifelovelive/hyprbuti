@@ -1,10 +1,14 @@
-/**
- *
- * Feb 12 , 2026 Modification code rasi  
- * Rofi Applications Launcher Theme File
- **/
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Rofi Applications Launcher Theme           │
+//  └────────────────────────────────────────────┘
 
-/*****----- Configuration -----*****/
+
+// ┌────────────────────────────────────────────┐
+// │                Configuration               │
+// └────────────────────────────────────────────┘
 configuration {
 	modi:                       "drun";
     show-icons:                 true;
@@ -12,11 +16,15 @@ configuration {
 	drun-display-format:        "{name}";
 }
 
-/*****----- Global Properties -----*****/
-@import                          "colors/catppuccin.rasi"
-@import                          "fonts/fonts.rasi"
+// ┌────────────────────────────────────────────┐
+// │       Global Colors Import links           │
+// └────────────────────────────────────────────┘
+@import "colors/solarized.rasi"
+@import "fonts/fonts.rasi"
 
-/*****----- Main Window -----*****/
+// ┌────────────────────────────────────────────┐
+// │               Main Window                  │
+// └────────────────────────────────────────────┘
 window {
     transparency:                "real";
     location:                    center;
@@ -29,14 +37,16 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      2px solid;
     border-radius:               1px;
-    border-color:                @selected;
+    border-color:                @active;
     background-color:            @background;
     cursor:                      "default";
 }
 
-/*****----- Main Box -----*****/
+// ┌────────────────────────────────────────────┐
+// │                Main Box                    │
+// └────────────────────────────────────────────┘
 mainbox {
     enabled:                     true;
     spacing:                     15px;
@@ -49,7 +59,9 @@ mainbox {
     children:                    [ "inputbar", "listview" ];
 }
 
-/*****----- Inputbar -----*****/
+// ┌────────────────────────────────────────────┐
+// │                Input Bar                   │
+// └────────────────────────────────────────────┘
 inputbar {
     enabled:                     true;
     spacing:                     0px;
@@ -88,7 +100,9 @@ entry {
     placeholder-color:           inherit;
 }
 
-/*****----- Listview -----*****/
+// ┌────────────────────────────────────────────┐
+// │                Listview                    │
+// └────────────────────────────────────────────┘
 listview {
     enabled:                     true;
     columns:                     4;
@@ -118,7 +132,9 @@ scrollbar {
     background-color:            @background-alt;
 }
 
-/*****----- Elements -----*****/
+// ┌────────────────────────────────────────────┐
+// │                Elements                    │
+// └────────────────────────────────────────────┘
 element {
     enabled:                     true;
     spacing:                     10px;
@@ -164,7 +180,9 @@ element-text {
     horizontal-align:            0.5;
 }
 
-/*****----- Message -----*****/
+// ┌────────────────────────────────────────────┐
+// │                Message                     │
+// └────────────────────────────────────────────┘
 error-message {
     padding:                     20px;
     border:                      2px solid;

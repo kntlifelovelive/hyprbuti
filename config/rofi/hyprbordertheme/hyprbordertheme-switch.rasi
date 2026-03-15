@@ -1,7 +1,17 @@
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │                                            │
+//  └────────────────────────────────────────────┘
+
+
+
+
 window {
-    width: 700px;
+    width: 450px;
     padding: 20px;
-    background-color: rgba(26,27,38,0.88);
+    background-color: rgba(26,27,38,0.48);
     border: 2px;
     border-color: #7aa2f7;
 }
@@ -11,7 +21,7 @@ listview {
     background-color: #1a1b26;
 }
 element {
-    padding: 1px;
+    padding: 2px;
     text-color: #c0caf5;
 }
 element selected {

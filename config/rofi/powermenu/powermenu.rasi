@@ -1,6 +1,10 @@
-/**
- * Modified : Rounded + transparent + emoji icons
- **/ 
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Rofi PowerMenu Rasi Launcher  Theme        │
+//  └────────────────────────────────────────────┘
+
  * {
     font: "JetBrains Mono 12";
  }

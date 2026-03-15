@@ -1,9 +1,17 @@
 #!/bin/bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 THEME_DIR="$HOME/.config/hypr/hyprbordercolortheme/"
 TARGET="$HOME/.config/hypr/hyprsubconfig/colors.conf"
 
-themes=$(find "$THEME_DIR" -maxdepth 1 -type f -iname "*.conf" -printf "%f\n" | sort)
+# themes=$(find "$THEME_DIR" -maxdepth 1 -type f -iname "*.conf" -printf "%f\n" | sort)
+themes=$(basename -s .conf -a "$THEME_DIR"/*.conf | sort)
 
 chosen=$(echo "$themes" | rofi -dmenu -i \
 	-theme "$HOME/.config/rofi/hyprbordertheme/hyprbordertheme-switch.rasi" \

@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │                                            │
+# └────────────────────────────────────────────┘
+
 BT_SERVICE="bluetooth"
 
 # ---------- YAD Notify ----------

@@ -1,0 +1,41 @@
+//  ┌────────────────────────────────────────────┐
+//  │ AuthorModify : KyawNyeinThant              │
+//  │ Github       : kntlifelovelive             │
+//  │ Date         : 2026 , March, 12            │
+//  │ Rofi Colors Switch Rasi Launcher  Theme    │
+//  └────────────────────────────────────────────┘
+
+
+// ┌────────────────────────────────────────────┐
+// │             Colors Import links            │
+// └────────────────────────────────────────────┘
+@import "colors/solarized.rasi"
+
+// rgba(26,27,38,0.48);#33467c;
+// #7aa2f7; #1a1b26;#7dcfff;#33467c;#c0caf5;
+
+window {
+    width: 450px;
+    padding: 20px;
+    border: 2px;
+
+    background-color: @background;
+    border-color: @active;
+}
+listview {
+    lines: 16;
+    spacing: 3px;
+    background-color: @background-alt;
+}
+element {
+    padding: 2px;
+    text-color: @urgent;
+}
+element selected {
+    text-color: @urgent;
+    background-color: @background-alt;
+}
+prompt {
+    text-color: @selected;
+    font: "JetBrainsMono Bold 15";
+}

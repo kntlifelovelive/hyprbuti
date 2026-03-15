@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# Rofi App Menu Script
-# -----------------------------------
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant              │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 13            │
+# │ Rofi App Menu Script                       │
+# └────────────────────────────────────────────┘
 
 ROFI_THEME="$HOME/.config/rofi/applauncher/applauncher.rasi"
 
