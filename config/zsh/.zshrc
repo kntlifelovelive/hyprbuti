@@ -18,7 +18,7 @@ alias hr="hyprctl reload"
 
 # Myconfig alias ===
 # ==================
-
+alias e='eza --icons'
 alias el='eza -lh --icons --git --group-directories-first'
 alias ela='eza -alh --icons --git --group-directories-first'
 
@@ -61,7 +61,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
-# ZSH Customize Prompt  Function 
+# ZSH Customize PS1 Prompt  Function 
 function set_bubu_prompt() {
   local exit_code=$?        # last command exit code
   local git_branch=""
@@ -106,35 +106,10 @@ function set_bubu_prompt() {
 # %F{magenta}╰─${prompt_symbol} %f"
 }
 
+# Zsh PS1 Prompt function Invoke 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd set_bubu_prompt
 
-
-# Shell Prompt Title Banner Function 
-
-title_banner() {
-echo -e "\033[1;35m  
-▄▄   ▄▄ ▄▄▄▄▄ ▄▄     ▄▄▄▄  ▄▄▄  ▄▄   ▄▄   ▄▄▄▄▄▄ ▄▄▄    ████▄  ▄▄▄▄  ▄▄▄▄▄  ▄▄▄  ▄▄   ▄▄ 
-██ ▄ ██ ██▄▄  ██    ██▀▀▀ ██▀██ ██▀▄▀██     ██  ██▀██   ██  ██ ██▄█▄ ██▄▄  ██▀██ ██▀▄▀██ 
- ▀█▀█▀  ██▄▄▄ ██▄▄▄ ▀████ ▀███▀ ██   ██     ██  ▀███▀   ████▀  ██ ██ ██▄▄▄ ██▀██ ██   ██
-\033[0m"
-	local text=" 🌺 Trust your heart if the sea catch fire,live by love though the stars walk backwack. 🌸🌾 "
-	local padding=35 # slide distance
-	local speed=0.04
-	
-    chafa --colors full --symbols braille --size 20x20 \
-    "$HOME/.config/bubuicon/butilove.png"
-	tput civis # hide cursor
-
-	# Slide from right
-	for ((i = padding; i >= 0; i--)); do
-		printf "\r%*s\e[1;36m%s\e[0m" "$i" "" "$text"
-		sleep $speed
-	done
-	# Keep full text and enable blink
-	printf "\r\e[5m\e[1;36m%s\e[25m\e[0m\n" "$text"
-	tput cnorm # restore cursor
-}
 
 # Define the banner function
 print_banner() {
@@ -146,9 +121,67 @@ print_banner() {
 # Custom clear command to include banner
 function clear {
 	command clear
-	print_banner	
+	print_banner
 }
 
-# function invoke  call 
-[[ -o interactive ]] && title_banner
 
+# ┌────────────────────────────────────────────┐
+# │ Terminal Banner ScriptPath Import Variable │
+# │ AuthorModify : KyawNyeinThant,Gemini flash │
+# │ Date         : 2026 , March, 17            │
+# └────────────────────────────────────────────┘
+# Terminal Banner Script Path folder 
+BANNER_DIR="$HOME/.config/TerminZsh_Banner"
+
+# 1 Load Variable Files
+[[ -f "$BANNER_DIR/asciibanners.zsh" ]] && source "$BANNER_DIR/asciibanners.zsh"
+[[ -f "$BANNER_DIR/textbanners.zsh" ]] && source "$BANNER_DIR/textbanners.zsh"
+
+# 2 Load All Functions (Animations & Effects)
+for f in "$BANNER_DIR/animations/"*.zsh; do source "$f"; done
+for f in "$BANNER_DIR/text_effects/"*.zsh; do source "$f"; done
+
+
+
+# ┌────────────────────────────────────────────┐
+# │ Terminal Banner Animation Main Function    │
+# │ AuthorModify : KyawNyeinThant,Gemini flash │
+# │ Date         : 2026 , March, 17            │
+# └────────────────────────────────────────────┘
+# 3 Master Random Banner Function (Fixed Version)
+random_banner() {
+
+    # (A) ASCII Banner Random 
+    local ascii_list=( ${(k)parameters[(I)Banner_*]} )
+    local selected_ascii_name="${ascii_list[$(( RANDOM % ${#ascii_list[@]} + 1 ))]}"
+    local selected_ascii="${(P)selected_ascii_name}"
+
+    # (B) Text Message Random 
+    local text_list=( ${(k)parameters[(I)Text_*]} )
+    local selected_text_name="${text_list[$(( RANDOM % ${#text_list[@]} + 1 ))]}"
+    local selected_text="${(P)selected_text_name}"
+
+    # (C) Auto-Detect Functions
+    local header_anims=( ${(k)functions[(I)header_*]} )
+    local text_effects=( ${(k)functions[(I)text_*]} )
+
+    # --- EXECUTION ---
+    # ၁။ ASCII Header Animation (Index + 1 )
+    if [[ ${#header_anims[@]} -gt 0 ]]; then
+        local h_idx=$(( RANDOM % ${#header_anims[@]} + 1 ))
+        ${header_anims[$h_idx]} "$selected_ascii"
+    fi
+    
+    # ၂။ Text Effect Animation Random (Index + 1 )
+    if [[ ${#text_effects[@]} -gt 0 ]]; then
+        local t_idx=$(( RANDOM % ${#text_effects[@]} + 1 ))
+        ${text_effects[$t_idx]} "$selected_text"
+    fi
+}
+
+# ┌────────────────────────────────────────────┐
+# │ Terminal Banner Animation Open Run         │
+# │ AuthorModify : KyawNyeinThant,Gemini flash │
+# │ Date         : 2026 , March, 17            │
+# └────────────────────────────────────────────┘
+[[ -o interactive ]] && { command clear; random_banner }
