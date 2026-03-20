@@ -1,6 +1,12 @@
 !/usr/bin/env zsh
 
 
+# ┌────────────────────────────────────────────┐
+# │ AuthorModify : KyawNyeinThant,FlashAi      │
+# │ Github       : kntlifelovelive             │
+# │ Date         : 2026 , March, 20            │
+# │ Script       : FzF Finder Search           │
+# └────────────────────────────────────────────┘
 
 
 # --- Smart File Opener with Rich Preview (Ctrl+T) ---
