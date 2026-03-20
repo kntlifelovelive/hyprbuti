@@ -19,7 +19,10 @@ alias hr="hyprctl reload"
 # Myconfig alias ===
 # ==================
 alias e='eza --icons'
+alias ea='eza -a --icons'
 alias el='eza -lh --icons --git --group-directories-first'
+alias elt='eza -lh --total-size --icons --git --group-directories-first'
+alias eltt='eza -lh --total-size --tree --icons --git --group-directories-first'
 alias ela='eza -alh --icons --git --group-directories-first'
 
 # Pacman install package
@@ -41,25 +44,87 @@ alias ysearch='yay -Ss'  # search
 # node global Path import 
 export PATH=~/.npm-global/bin:$PATH
 
+#--- kitty setting
 export TERM=kitty
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-eval "$(zoxide init zsh)" # super file maanger for packager metadatas 
+# --- Navigation (zoxide) --- 'cd' command instead of 'z' command
+eval "$(zoxide init zsh)" 
 
 
+# --- Search & Preview (fzf) ---
+# eval "$(fzf --zsh)"             # Initialize fzf for Zsh shell
+# export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git" # Use 'fd' to find files (including hidden ones)
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" # Use the same 'fd' command for Ctrl+T search
+# # Folder Search (Alt+C) configuration
+# export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git" # Find only directories/folders
+# export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -300'" # Show folder tree preview using eza
+# # File Search (Ctrl+T) configuration
+# export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'" # Show file content preview using bat
+#
+
+
+# --- Search & Preview (fzf) ---
+eval "$(fzf --zsh)"             # Initialize fzf for Zsh shell
+# Keyboard Shortcuts (Vim Style)
+export FZF_DEFAULT_OPTS="--bind 'j:down,k:up,ctrl-d:page-down,ctrl-u:page-up'" # Use j/k to move and Ctrl+d/u to scroll in fzf list
+
+# ┌────────────────────────────────────────────┐
+# │ FzF finder Script Source Links             │
+# │ AuthorModify : KyawNyeinThant,Gemini flash │
+# │ Date         : 2026 , March, 20            │
+# └────────────────────────────────────────────┘
+# Load Modular ZshFZF-folder Config
+[[ -f ~/.config/ZshFzf/zshFzf.zsh ]] && source ~/.config/ZshFzf/zshFzf.zsh
+
+
+# -- Vim & Navigation Setup ---
+bindkey -v
+export KEYTIMEOUT=20
+# jk shortcut 
+bindkey -M viins 'jk' vi-cmd-mode
+# Tab suggestion (Accept suggestion with Tab)
+bindkey '^ ' autosuggest-accept
+# Vi-Insert mode  Ta Suggestion
+bindkey -M viins '^ ' autosuggest-accept
+
+
+
+# Load Plugins (System Clipboard 
+source "${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+# --Note Install zsh Plugin 
+#git clone https://github.com/kutsan/zsh-system-clipboard ${ZSH_CUSTOM:-~/.zsh}/plugins/zsh-system-clipboard
+
+# Cursor shape mode  function
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[2 q'  # Normal Mode (Block █)
+  elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ -z $1 ]] || [[ $1 = 'beam' ]]; then
+    echo -ne '\e[6 q'  # Insert Mode (Beam |)
+  fi
+}
+zle -N zle-keymap-select
+
+# Terminal Beam cursor Block  
+_fix_cursor() { echo -ne '\e[6 q' }
+precmd_functions+=(_fix_cursor)
+
+
+# command history store size
 HISTSIZE=150000
 SAVEHIST=150000
 HISTFILE=~/.zsh_history
 
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_FIND_NO_DUPS
-setopt HIST_REDUCE_BLANKS
+# --- Zsh History Settings ---
+setopt APPEND_HISTORY          # Add new commands to the history file instead of overwriting it
+setopt SHARE_HISTORY           # Share command history across all open terminal windows
+setopt INC_APPEND_HISTORY      # Save commands to the history file as soon as they are typed
+setopt HIST_IGNORE_DUPS        # Do not save the same command if it's typed twice in a row
+setopt HIST_IGNORE_ALL_DUPS    # Remove older duplicate commands from the history
+setopt HIST_EXPIRE_DUPS_FIRST  # Delete duplicate commands first when history file is full
+setopt HIST_FIND_NO_DUPS       # Do not show duplicate commands when searching history
+setopt HIST_REDUCE_BLANKS      # Remove extra spaces from commands before saving them
 
 # ZSH Customize PS1 Prompt  Function 
 function set_bubu_prompt() {
