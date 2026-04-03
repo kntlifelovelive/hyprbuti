@@ -29,8 +29,8 @@ for item in "$REPO"/*; do
 	# ------------------------------
 	# ZSH (Normal User)
 	# ------------------------------
-	if [[ "$name" == "zsh" ]]; then
-		if [ -f "$item/.zshrc" ]; then
+	if [[ "$name" == "zshenv" ]]; then
+		if [ -f "$item/.zshenv" ]; then
 
 			if [ -f "$HOME/.zshrc" ]; then
 				echo "Backing up user .zshrc → .zshrc_backup_$DATE"
@@ -38,7 +38,7 @@ for item in "$REPO"/*; do
 			fi
 
 			echo "Copying user .zshrc"
-			cp "$item/.zshrc" "$HOME/"
+			cp "$item/.zshenv" "$HOME/"
 		fi
 		continue
 	fi

@@ -1,12 +1,17 @@
-!/usr/bin/env zsh
-
-
 # ┌────────────────────────────────────────────┐
 # │ AuthorModify : KyawNyeinThant,FlashAi      │
 # │ Github       : kntlifelovelive             │
 # │ Date         : 2026 , March, 20            │
 # │ Script       : FzF Finder Search           │
 # └────────────────────────────────────────────┘
+
+
+# Initialize fzf for Zsh
+eval "$(fzf --zsh)"
+
+# FZF options
+export FZF_DEFAULT_OPTS="--bind 'j:down,k:up,ctrl-d:page-down,ctrl-u:page-up'"
+
 
 
 # --- Smart File Opener with Rich Preview (Ctrl+T) ---
@@ -29,11 +34,11 @@ fzf-file-widget() {
 
   local selected_path=$(fd --hidden --exclude .git | fzf \
     --layout=reverse --height=85% \
-    --header=" [q] to Quit | [Enter] to Open" \
+    --header="  File Search |   [Enter] Open" \
     --header-first \
     --prompt="  || Search > " \
     --preview "$preview_cmd" \
-    --preview-window="right:60%:wrap")
+    --preview-window="right:60%:wrap:border-left")
 
   if [[ -n "$selected_path" ]]; then
     if [ -d "$selected_path" ]; then
@@ -41,19 +46,19 @@ fzf-file-widget() {
     elif [[ "$selected_path" =~ \.(png|jpg|jpeg|gif|mp4|mp3|mkv|pdf|docx|webp)$ ]]; then
       xdg-open "$selected_path" > /dev/null 2>&1 &
     else
-      zle -I; nvim "$selected_path"
+      nvim "$selected_path"
     fi
   fi
-  command clear; zle reset-prompt
+  zle reset-prompt
 }
 
 # --- Folder Search (Ctrl+F) 
 fzf-cd-widget() {
   local dest=$(fd --type=d --hidden --exclude .git | fzf \
     --layout=reverse --height=85% \
-    --header="󰉍  Folder Search | [q] to Quit" \
+    --header="  Folder Search |   [Enter] Change Directory" \
     --header-first \
-    --prompt="  || Search > " \
+    --prompt="    Search > " \
     --preview 'size=$(du -sh {} | cut -f1); echo -e "\e[1;35m   Folder Size:\e[0m \e[1;36m$size\e[0m"; echo -e "\e[1;34m--------------------------------------------\e[0m"; eza --icons=always --tree --color=always {} | head -200')
 
   [[ -n "$dest" ]] && cd "$dest"
@@ -71,12 +76,3 @@ zle -N fzf-cd-widget
 bindkey '^f' fzf-cd-widget
 bindkey -M viins '^f' fzf-cd-widget
 bindkey -M vicmd '^f' fzf-cd-widget
-
-
-
-
-
-
-
-
-
