@@ -34,6 +34,12 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
 		"$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 fi
 
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-system-clipboard" ]; then
+	echo "[ZSH] Installing zsh-system-clipboard (user)..."
+	git clone https://github.com/kutsan/zsh-system-clipboard \
+		"$ZSH_CUSTOM/plugins/zsh-system-clipboard"
+fi
+
 # Set default shell (user)
 echo "[ZSH] Setting default shell for user..."
 chsh -s "$(which zsh)"
