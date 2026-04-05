@@ -15,6 +15,7 @@ TARGETS=(
 	"$HOME/.config/rofi/hyprlock/hyprlockWallpapers-bg.rasi"
 	"$HOME/.config/rofi/hyprlock/hyprlockForeImages.rasi"
 	"$HOME/.config/rofi/roficolorswitch/roficolor-switch.rasi"
+	# "$HOME/.config/rofi/kitty-themes/kitty-theme-switch.rasi"
 )
 
 themes=$(basename -s .rasi -a "$COLOR_DIR"/*.rasi)

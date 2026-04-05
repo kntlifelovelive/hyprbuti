@@ -52,6 +52,8 @@ SUPER + SHIFT + L      → Select Lock Background
 SUPER + ALT + K        → Kitty-themes Switch 
 SUPER + ALT + R        → Rofi All Colors Switch 
 
+SUPER + CTRL + V       → ScreenCat Mp4 No Audio
+SUPER + ALT + V        → Screencat Stop
 
 ========= SCREENSHOT =========
 
