@@ -176,7 +176,6 @@ _comps=(
 'clang++' '_gcc'
 'clay' '_clay'
 'clear' '_nothing'
-'clone-in-kitty' '_kitty'
 'cloudkitty' '_openstack'
 'clusterdb' '_postgresql'
 'cmp' '_cmp'
@@ -225,7 +224,6 @@ _comps=(
 'curl' '_curl'
 'cut' '_cut'
 'cvs' '_cvs'
-'d' '_dirs'
 'darcs' '_darcs'
 'dash' '_sh'
 'date' '_date'
@@ -400,7 +398,6 @@ _comps=(
 'gbasename' '_basename'
 'gcat' '_cat'
 'gcc' '_gcc'
-'gccd' '_git'
 'gccgo' '_go'
 'gchgrp' '_chown'
 'gchmod' '_chmod'
@@ -417,9 +414,7 @@ _comps=(
 'gdd' '_dd'
 'gdf' '_df'
 'gdiff' '_diff'
-'gdnolock' '_git'
 'gdu' '_du'
-'gdv' '_git'
 'geany' '_geany'
 'gegrep' '_grep'
 'gem' '_gem'
@@ -442,13 +437,7 @@ _comps=(
 'gfmt' '_fmt'
 'gfold' '_fold'
 'ggetopt' '_getopt'
-'ggf' '_git'
-'ggfl' '_git'
-'ggl' '_git'
-'ggp' '_git'
-'ggpnp' '_git'
 'ggrep' '_grep'
-'ggu' '_git'
 'ggv' '_gnome-gv'
 'ghead' '_head'
 'ghostscript' '_ghostscript'
@@ -458,7 +447,6 @@ _comps=(
 'git' '_git'
 'git-cvsserver' '_git'
 'gitk' '_git'
-'_git_log_prettily' '_git'
 'git-receive-pack' '_git'
 'git-shell' '_git'
 'git-upload-archive' '_git'
@@ -678,7 +666,6 @@ _comps=(
 'killall' '_killall'
 'killall5' '_killall'
 'kioclient' '_kfmclient'
-'kitten' '_kitty'
 'kitty' '_kitty'
 'knock' '_knock'
 'konqueror' '_webbrowser'
@@ -779,6 +766,7 @@ _comps=(
 'mdeltree' '_mtools'
 'mdir' '_mtools'
 'mdu' '_mtools'
+'medusa' '_medusa'
 'mencal' '_mencal'
 'mere' '_mere'
 'merge' '_rcs'
@@ -893,7 +881,6 @@ _comps=(
 'ntalk' '_other_accounts'
 'numfmt' '_numfmt'
 'nvim' '_vim'
-'nvm' '_bash_complete -o default -F __nvm'
 'objdump' '_objdump'
 'od' '_od'
 'ogg123' '_vorbis'
@@ -902,7 +889,6 @@ _comps=(
 'ogginfo' '_vorbis'
 'oksh' '_sh'
 'okular' '_okular'
-'omz' '_omz'
 'oomctl' '_oomctl'
 'openstack' '_openstack'
 'opera' '_webbrowser'
@@ -1560,7 +1546,6 @@ _comps=(
 'ypxfr' '_yp'
 'ytalk' '_other_accounts'
 'yt-dlp' '_yt-dlp'
-'z' '__zoxide_z_complete'
 'zargs' '_zargs'
 'zcalc' '_zcalc'
 '-zcalc-line-' '_zcalc_line'
@@ -1612,18 +1597,8 @@ _comps=(
 
 _services=(
 'bzcat' 'bunzip2'
-'gccd' 'git-clone'
 'gchgrp' 'chgrp'
 'gchown' 'chown'
-'gdnolock' 'git-diff'
-'gdv' 'git-diff'
-'ggf' 'git-push'
-'ggfl' 'git-push'
-'ggl' 'git-pull'
-'ggp' 'git-push'
-'ggpnp' 'git-checkout'
-'ggu' 'git-pull'
-'_git_log_prettily' 'git-log'
 'gnupod_addsong.pl' 'gnupod_addsong'
 'gnupod_check.pl' 'gnupod_check'
 'gnupod_INIT.pl' 'gnupod_INIT'
@@ -1733,14 +1708,14 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _kitty _awww _bat _bluetoothctl _bootctl \
-            _busctl _bwrap _cargo _chafa _code \
-            _coredumpctl _ctr _curl _deno _docker \
-            _dolphin _dunst _dunstctl _dunstify _dust \
-            _eza _fastfetch _fd _flatpak _gum \
-            _hostnamectl _hyprctl _hyprpm _img2sixel _insmod \
-            _john _journalctl _kernel-install _kitty _localectl \
-            _loginctl _lsd _lsmod _machinectl _mkinitcpio \
+autoload -Uz _awww _bat _bluetoothctl _bootctl _busctl \
+            _bwrap _cargo _chafa _code _coredumpctl \
+            _ctr _curl _deno _docker _dolphin \
+            _dunst _dunstctl _dunstify _dust _eza \
+            _fastfetch _fd _flatpak _gum _hostnamectl \
+            _hyprctl _hyprpm _img2sixel _insmod _john \
+            _journalctl _kernel-install _kitty _localectl _loginctl \
+            _lsd _lsmod _machinectl _medusa _mkinitcpio \
             _mpv _msfconsole _msfvenom _networkctl _oomctl \
             _p11-kit _pacman _pip _playerctl _procs \
             _progress _pulseaudio _resolvectl _rg _rmmod \
